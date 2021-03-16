@@ -141,7 +141,7 @@ public class OrderService {
 		{
 			OrderDetailsEntity entity = orderdetails.get();
 			ordDTO= OrderDetailsDTO.valueOf(entity);
-			if(buyerId==ordDTO.getBuyerid()) 
+			if(buyerId.equals(ordDTO.getBuyerid())) 
 			{
 			orderDetails = new OrderDetailsEntity();
 			orderDetails.setAddress(ordDTO.getAddress());

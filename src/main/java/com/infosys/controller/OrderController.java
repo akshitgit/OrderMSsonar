@@ -112,7 +112,7 @@ public class OrderController {
 			List<ProductDTO> plist2 = Arrays.asList(mapper.readValue(prodDTO, ProductDTO[].class));
 			for(CartDTO cartDTO:ppl2) {
 				for(ProductDTO productDTO:plist2) {
-					if(cartDTO.getProdId()==productDTO.getProdId()) {
+					if(cartDTO.getProdId().equals(productDTO.getProdId())) {
 						String url6="http://localhost:8100/api/products/"+productDTO.getProdId()+"/quantity/"+cartDTO.getQuantity();
 						Boolean returnValue=restTemplate.getForObject(url6, Boolean.class);
 						System.out.println(returnValue);
